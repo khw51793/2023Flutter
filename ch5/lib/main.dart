@@ -1,7 +1,10 @@
-//import 'package:ch05/CheckBoxTest.dart';
+import 'package:ch05/CheckBoxTest.dart';
+import 'package:ch05/HeroTest.dart';
 import 'package:ch05/RadioListTest.dart';
 import 'package:flutter/material.dart';
-//import 'package:ch05/TextFieldTest.dart';
+import 'package:ch05/TextFieldTest.dart';
+import 'package:ch05/DatePicker.dart';
+import 'package:ch05/AlertDlg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +23,11 @@ class MyApp extends StatelessWidget {
       ),
       //home: TextFieldTest(),
       //home : CheckBoxTest(),
-      home : RadioListTest()
+      //home : RadioListTest(),
+      //home : DatePicker(),
+      //home : AlertDlg(),
+      //home: EventText(),
+      home: HeroTest()
     );
   }
 }
