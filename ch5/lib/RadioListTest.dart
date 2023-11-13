@@ -9,6 +9,8 @@ class RadioListTest extends StatefulWidget {
 
 enum Gender {MAN, WOMEN}
 
+Gender _gender = Gender.MAN;
+
 
 
 class _RadioListTestState extends State<RadioListTest> {
@@ -36,7 +38,7 @@ class _RadioListTestState extends State<RadioListTest> {
             ),
           ),
           ListTile(
-            title: Text('여자'),
+            title: const Text('여자'),
             leading: Radio(
               value: Gender.WOMEN,
               groupValue : gender,
@@ -51,9 +53,24 @@ class _RadioListTestState extends State<RadioListTest> {
           SizedBox(height: 100,),
           RadioListTile(
             title: Text('Man'),
-              value: Gender.,
-              groupValue: groupValue,
-              onChanged: onChanged),
+              value: Gender.MAN,
+              groupValue: _gender,
+              onChanged: (value){
+                setState((){
+                  _gender = value!;
+                });
+                },
+          ),
+          RadioListTile(
+            title: Text('Woman'),
+            value: Gender.WOMEN,
+            groupValue: _gender,
+            onChanged: (value){
+              setState((){
+                _gender = value!;
+              });
+            },
+          ),
         ],
       ),
     );
