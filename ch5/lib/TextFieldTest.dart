@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TextFieldTest extends StatefulWidget {
@@ -8,41 +9,57 @@ class TextFieldTest extends StatefulWidget {
 }
 
 class _TextFieldTestState extends State<TextFieldTest> {
-  String inputText = '입력한 결과';
+  String inputText ='input contents';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       appBar: AppBar(
-        title: Text('TextField Test'),
+        title: Text(('TextFiled')),
         backgroundColor: Colors.cyan,
       ),
       body: Column(
         children: [
           Text('$inputText',
-              style :TextStyle(
-                fontSize: 40,
-              ),
+            style:TextStyle(
+                fontSize: 40
+            ),
           ),
           SizedBox(
             height: 50,
+
           ),
           TextField(
-            onChanged: (text){...},
+            onChanged: (text){
+              setState(() {
+                inputText = text;
+              });
+            },
           ),
-          SizedBox(...),
+          SizedBox(
+            height: 50,
+
+          ),
           TextField(
-            onChanged: (text){...},
+            onChanged: (text){
+              setState(() {
+                inputText = text;
+              });
+            },
             decoration: InputDecoration(
-              labelText: '이름을 입력하세요'
+                labelText: '이름을 입력하세요'
             ),
           ),
-          SizedBox(...),
+          SizedBox(
+            height: 50,
+
+          ),
           TextField(
-            onChanged: (text){...},
+            onChanged: (text){
+              setState(() {inputText = text;});},
             decoration: InputDecoration(
-              labelText: '나이를 입력하세요'
+                labelText: '나이를입력하세요'
             ),
-          )
+          ),
         ],
       ),
     );
