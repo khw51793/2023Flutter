@@ -28,7 +28,7 @@ class _CheckBoxTestState extends State<CheckBoxTest> {
           ),
           SizedBox(
             height : 40,
-          )
+          ),
           Switch(
               value: isChecked!,
               onChanged: (value) {
