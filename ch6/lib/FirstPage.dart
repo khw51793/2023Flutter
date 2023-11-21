@@ -1,6 +1,6 @@
 import 'package:ch6/Person.dart';
 import 'package:flutter/material.dart';
-import 'SecondPage.dart';
+import 'package:ch06/SecondPage.dart';
 
 class FirstPage extends StatefulWidget{
   const FirstPage({super.key});
@@ -22,18 +22,17 @@ class _FirstPageState extends State<FirstPage>{
         children: [
           Text(resultStr),
           SizedBox(
-            height: 40,
+            height: 45,
           ),
           ElevatedButton(
             child: Text('다음 페이지로 이동'),
             onPressed: () async {
               final person = new Person('홍길동', 30);
-              final result = await Navigator.push(
+              final result = await Navigator.pushNamed(
                   context,
-                  MaterialPageRoute(builder: (context)=>SecondPage(person:person)),
-              );
+                  '/second');
               setState(() {
-                resultStr = result;
+                //resultStr = result;
               });
             },
           ),
